@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Tip calculator app</title>
+</head>
+<body>
+<main>
+  <section>
+    <div class="app-wrapper">
+    <div class="grid-desk">
+      <div>
+        <form>
+        <label for="bill">Bill</label><br>
+        <input type="number" id="bill" name="bill" value="">
+        </form>
+      </div>
+      <br>
+      
+      <div>
+        <form>
+          <label>Select Tip %</label>
+          <div class="even-colums">
+            <input type="button" class="btnProcentage" id="5" value=" 5%" onClick="procentage(this)">
+            <input type="button" class="btnProcentage" id="10" value="10%" onClick="procentage(this)">
+            <input type="button" class="btnProcentage" id="15" value="15%" onClick="procentage(this)">
+            <input type="button" class="btnProcentage" id="25" value="25%" onClick="procentage(this)">
+            <input type="button" class="btnProcentage" id="50" value="50%" onClick="procentage(this)">
+            <input type="number" id="custom" name="custom" value="" min="1" max="10000000" placeholder="Custom">
+          </div>
+        </form>
+      </div>
+      <br>
+      <div>
+        <form>
+          <label for="bill">Number of People</label><br>
+          <input type="number" id="number-of-people" name="number-of-people" value="">
+        </form>
+      </div>
+    </div>
+    <br>
+    <!-- Zeleni dio -->
+    <div class="results grid">
+      <div>
+        <div class="flexbox align-center space-between">
+          <div class="grid">
+            <div class="clr-100">Tip Amount</div>
+            <div class="clr-200 font-size-secondary">/ person</div>
+          </div>
+          <div class="result" id="tipAmount">$0.00</div>
+        </div>
+        <div class="flexbox space-between align-center">
+          <div class="grid">
+            <div class="clr-100">Total</div>
+            <div class="clr-200 font-size-secondary">/ person</div>
+          </div>
+          <div class="result" id="totalAmount">$0.00</div>
+        </div>
+      </div>
+      <br>
+      <div class="grid align-center">
+        <button class="button" id="btnReset" onclick="reset()">RESET</button>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
+
+  <script src="app.js"></script>
+</body>
+</html>

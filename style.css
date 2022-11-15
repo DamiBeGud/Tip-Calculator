@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+
+    --primary-clr: hsl(172, 67%, 45%);
+
+    --neutral-clr-100: hsl(0, 0%, 100%);
+    --neutral-clr-200: hsl(189, 41%, 97%);
+    --neutral-clr-300: hsl(189, 41%, 97%);
+    --neutral-clr-400: hsl(184, 14%, 56%);
+    --neutral-clr-500: hsl(186, 14%, 43%);
+    --neutral-clr-600: hsl(183, 100%, 15%);
+
+    --bg-clr-primary: var(--neutral-clr-100);
+    --bg-clr-secondary: var(--neutral-clr-600);
+    --bg-clr-form:var(--neutral-clr-300);
+
+    --ff:'Space Mono', monospace;
+    --font-weight: 700;
+
+
+    --font-size-primary:1rem;
+    --font-size-secondary:0.875rem;
+
+    --font-size-inputs:1.5rem;
+}
+
+/*************** Utility classes ***************/
+.bg-clr-secondary{
+    background: var(--bg-clr-secondary);
+}
+.clr-100{
+    color:var(--neutral-clr-100);
+}
+.clr-200{
+    color:var(--neutral-clr-400);
+}
+.font-size-secondary{
+    font-size:var(--font-size-secondary) ;
+}
+.flexbox{
+    display: flex;
+    max-width: auto;
+    min-width: 18em;
+}
+.space-between{
+    justify-content: space-between;
+}
+
+
+.align-center{
+    align-items: center;
+}
+.grid{
+    display:grid;
+}
+
+/****************** General Styling*****************/
+input[type = button]{
+    border:none;
+    border-radius: 0.25em;
+    background-color: var(--bg-clr-secondary);
+    color:var(--neutral-clr-100);
+    padding: 0.2em 2.25em 0.2em 2.25em;
+    font-family: var(--ff);
+    font-size: var(--font-size-inputs);
+    cursor:pointer;
+}
+.button-active{
+    background: var(--primary-clr) !important;
+    color: var(--neutral-clr-600);
+}
+input[type = number]{
+    border: none;
+    min-height: 2rem;
+    background: var(--bg-clr-form);
+    font-family: var(--ff);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size-inputs);
+    color: var(--neutral-clr-600);
+    text-align: right;
+    direction: rtl;
+    cursor:pointer;
+    outline: none;
+    border-radius: 0.2em;
+}
+input[type=number]:focus{
+    border:none;
+    border: 1.5px solid var(--primary-clr);
+}
+label{
+    font-family: var(--ff);
+    font-size: var(--font-size-primary);
+    font-weight: var(--font-weight);
+    color:var(--neutral-clr-500)
+}
+.result{
+    color:var(--primary-clr);
+    font-size: 2rem;
+}
+.button{
+    border:none;
+    background: var(--primary-clr);
+    color:var(--neutral-clr-600);
+    font-family: var(--ff);
+    font-size: var(--font-size-inputs);
+    padding: 0.2em;
+    min-width: 12em;
+}
+@media(min-width: 50em){
+    input[type = button]{
+        padding: 0.2em 1.5em 0.2em 1.5em;
+    }
+}
+
+/***************** Layout ********************/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size-primary);
+    background-color:var(--neutral-clr-400);
+}
+main{
+    display:flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    max-width: 375px;
+    background-color:var(--bg-clr-primary);
+    border-radius:1em ;
+}
+.app-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+    padding: 1em;
+}
+#bill{
+    min-width: 98%;
+    background-image: url("images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 0.7em;
+
+}
+.even-colums{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:1em;
+}
+#custom{
+    max-width: 6.1em;
+} 
+#custom:focus{
+    initial-value: '';
+}
+#number-of-people{
+    min-width: 98%;
+    background-image: url("images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 0.7em;
+}
+.results{
+    background-color: var(--neutral-clr-600);
+    padding: 1em;
+    padding-top: 2em;
+    border-radius: 1em;
+    justify-items: center;
+}
+@media(min-width:50em){
+    
+    main{
+        width: 100vw;
+    }
+    section{
+        max-width: 60em;
+    }
+    .app-wrapper{
+        flex-direction: row;
+        max-width: 50em;
+        padding: 2em;
+        gap:2em;
+    }
+    .grid-desk{
+        display: grid;
+        gap:1em;
+    }
+    #custom{
+        max-width: 4.6em;
+    } 
+    .results{
+        padding: 2em 2em 0 2em;
+    }
+}
